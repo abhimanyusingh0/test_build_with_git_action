@@ -16,4 +16,4 @@ jobs:
     - uses: actions/checkout@v3
     - run: echo "BRANCH=$(git branch -a | grep -v HEAD | cut -d '/' -f3)" | tee -a $GITHUB_ENV
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test_build_with_git_action:${{ env.BRANCH }}
+      run: docker build . --file Dockerfile --tag test_build_with_git_action:${{ BRANCH }}
